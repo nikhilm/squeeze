@@ -1,0 +1,4 @@
+allow each operation to have own callback.
+allow multiple series operation, parallel operation syntax
+How to store multiple jobs, or one instance per job?
+How does juicer handle multiple ops? can it do two ops one after the other and give one image?
