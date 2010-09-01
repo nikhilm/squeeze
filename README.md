@@ -8,12 +8,12 @@ Example usage:
 
     var squeeze = require('squeeze');
 
-    var s = new squeeze.Image('Image URL', 'API key');
-    s.op('size', '100x100>')
-     .op(...)
-     .perform(function(err, data) {
+    squeeze.API_KEY = 'Your key';
+    var s = new squeeze.Squeeze('Image URL');
+    s.output('size', '100x100>')
+     .poll(function(err, data) {
          // data is parsed JSON reply
-         console.log("Transformed image is at " + data.url);
+         console.log("Transformed image is at " + data.outputs[0].url);
     });
 
 ## Status
