@@ -1,5 +1,5 @@
 { "name" : "squeeze"
-, "version" : "0.5.0"
+, "version" : "0.6.0"
 , "homepage" : "http://github.com/nikhilm/squeeze"
 , "description" : "Squeeze is a Javascript API to UploadJuicer.com's image manipulation service"
 , "engines" : [ "node >=0.2.0" ]

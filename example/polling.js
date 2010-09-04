@@ -8,7 +8,11 @@ if( !process.argv[2] ) {
 }
 
 var s = new squeeze.Squeeze('http://farm5.static.flickr.com/4116/4774485856_e9aa9d81cf_b.jpg');
-s.output('monochrome', true)
+s.op('resize', '100x400!')
+   .and('monochrome')
+   .and('flip')
+ .op('negate')
+   .and('flip')
  .poll(function (err, data) {
     if(err)
         console.error(err);

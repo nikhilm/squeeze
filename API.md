@@ -16,15 +16,27 @@ Create a new Squeeze passing the URL of the image to convert
 
     var s = new squeeze.Squeeze('http://farm5.static.flickr.com/4116/4774485856_e9aa9d81cf_b.jpg');
 
-### Squeeze.output(operation, value)
+### Squeeze.op(operation, value)
 
-Use `Squeeze.output` to queue up an operation to be performed on the image. For example, to resize
+Use `Squeeze.op` to queue up an operation to be performed on the image. For example, to resize
 the image
 
     // resize 100x100
-    s.output('size', '100x100>')
+    s.op('size', '100x100>')
 
-`Squeeze.output` returns the object itself, so that you can chain multiple calls, although that isn't supported yet.
+`Squeeze.op` returns the object itself, so that you can chain multiple calls, although that isn't supported yet.
+For boolean operations, you can skip the `value` argument and it will be set to `true`.
+
+### Squeeze.and(operation, value)
+
+`Squeeze.op` creates a new image for every operation. If you want to perform multiple operations on the same image,
+say flip it first and then resize it, then you use `Squeeze.and`.
+
+    // enhance followed by flop
+    s.op('enhance')
+      .and('flop')
+
+`Squeeze.and` takes the same parameters as `Squeeze.op`.
 
 ## Performing the operation
 
